@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12' style='background-color:#ffffff5b'>
+            <h1 class='mb-3'>Jewellery</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Mass</th>
+                    <th scope="col">Wage</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Store</th>
+                    <th scope="col">Supplier</th>
+                    <!-- Add more table headers as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in get_jewellery %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <th scope="col">#</th>
+                        <th scope="col">{{b.name}}</th>
+                        <th scope="col">{{b.description}}</th>
+                        <th scope="col">{{b.quantity}}</th>
+                        <th scope="col">{{b.mass}}</th>
+                        <th scope="col">{{b.wage}}</th>
+                        <th scope="col">{{b.price}}</th>
+                        <th scope="col">{{b.category}}</th>
+                        <th scope="col">{{b.store}}</th>
+                        <th scope="col">{{b.supplier}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
